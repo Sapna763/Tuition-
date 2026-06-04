@@ -39,7 +39,7 @@ header {
 nav a {
   text-decoration: none;
   color: #334155;
-  margin-left: 28px;
+  margin-left: 24px;
   font-weight: 600;
 }
 
@@ -134,6 +134,11 @@ nav a:hover {
   font-weight: 600;
 }
 
+.hero-card a {
+  color: #1d4ed8;
+  text-decoration: none;
+}
+
 .section {
   padding: 85px 8%;
 }
@@ -162,7 +167,8 @@ nav a:hover {
   line-height: 1.7;
 }
 
-.modes {
+.modes,
+.features {
   background: #ffffff;
 }
 
@@ -239,21 +245,33 @@ nav a:hover {
   font-weight: 600;
 }
 
-.features {
-  background: #ffffff;
-}
-
 .form-section {
   background: linear-gradient(135deg, #eff6ff, #ffffff);
 }
 
+.forms-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
 .form-box {
-  max-width: 720px;
-  margin: auto;
   background: white;
   padding: 36px;
   border-radius: 26px;
   box-shadow: 0 16px 40px rgba(37,99,235,0.12);
+}
+
+.form-box h3 {
+  color: #1d4ed8;
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+.form-box p {
+  color: #64748b;
+  margin-bottom: 22px;
+  line-height: 1.6;
 }
 
 form {
@@ -292,6 +310,10 @@ button {
   font-size: 17px;
   font-weight: 800;
   cursor: pointer;
+}
+
+button:hover {
+  background: #1d4ed8;
 }
 
 .contact-info {
@@ -346,6 +368,10 @@ footer a {
     gap: 15px;
   }
 
+  nav {
+    text-align: center;
+  }
+
   nav a {
     margin: 0 8px;
     font-size: 14px;
@@ -384,6 +410,7 @@ footer a {
     <a href="#home">Home</a>
     <a href="#modes">Tuition Modes</a>
     <a href="#classes">Classes</a>
+    <a href="#feedback">Feedback</a>
     <a href="#contact">Contact</a>
   </nav>
 </header>
@@ -546,46 +573,76 @@ footer a {
 <section class="section form-section" id="contact">
   <div class="section-heading">
     <span>Contact Us</span>
-    <h2>Book a Free Demo Class</h2>
+    <h2>Enquiry & Feedback</h2>
     <p>
-      Fill the enquiry form and our team will contact you soon.
+      Submit your enquiry or share feedback with RS Tuition Center.
     </p>
   </div>
 
-  <div class="form-box">
-    <form action="mailto:sainisapna2017@gmail.com" method="post" enctype="text/plain">
-      <input type="text" name="Student Name" placeholder="Student Name" required>
-      <input type="text" name="Parent Name" placeholder="Parent Name" required>
-      <input type="tel" name="Mobile Number" placeholder="Mobile Number" required>
+  <div class="forms-wrapper">
 
-      <select name="Class" required>
-        <option value="">Select Class</option>
-        <option>Class 11th - 12th</option>
-        <option>Class 9th - 10th</option>
-        <option>Below Class 9th</option>
-      </select>
+    <div class="form-box">
+      <h3>Book Free Demo Class</h3>
+      <p>Fill the enquiry form and we will contact you soon.</p>
 
-      <select name="Subject" required>
-        <option value="">Select Subject</option>
-        <option>Physics</option>
-        <option>Chemistry</option>
-        <option>Mathematics</option>
-        <option>Science</option>
-        <option>English</option>
-        <option>All Subjects</option>
-      </select>
+      <form id="enquiryForm">
+        <input type="text" name="Student Name" placeholder="Student Name" required>
+        <input type="text" name="Parent Name" placeholder="Parent Name" required>
+        <input type="tel" name="Mobile Number" placeholder="Mobile Number" required>
 
-      <select name="Tuition Type" required>
-        <option value="">Select Tuition Type</option>
-        <option>Online Classes</option>
-        <option>Offline Classes</option>
-        <option>Home Tuition</option>
-      </select>
+        <select name="Class" required>
+          <option value="">Select Class</option>
+          <option>Class 11th - 12th</option>
+          <option>Class 9th - 10th</option>
+          <option>Below Class 9th</option>
+        </select>
 
-      <textarea name="Message" placeholder="Message"></textarea>
+        <select name="Subject" required>
+          <option value="">Select Subject</option>
+          <option>Physics</option>
+          <option>Chemistry</option>
+          <option>Mathematics</option>
+          <option>Science</option>
+          <option>English</option>
+          <option>All Subjects</option>
+        </select>
 
-      <button type="submit">Submit Enquiry</button>
-    </form>
+        <select name="Tuition Type" required>
+          <option value="">Select Tuition Type</option>
+          <option>Online Classes</option>
+          <option>Offline Classes</option>
+          <option>Home Tuition</option>
+        </select>
+
+        <textarea name="Message" placeholder="Message"></textarea>
+
+        <button type="submit">Submit Enquiry</button>
+      </form>
+    </div>
+
+    <div class="form-box" id="feedback">
+      <h3>Feedback Form</h3>
+      <p>Share your experience or suggestions with us.</p>
+
+      <form id="feedbackForm">
+        <input type="text" name="Name" placeholder="Your Name" required>
+        <input type="tel" name="Mobile Number" placeholder="Mobile Number" required>
+
+        <select name="Rating" required>
+          <option value="">Select Rating</option>
+          <option>Excellent</option>
+          <option>Very Good</option>
+          <option>Good</option>
+          <option>Average</option>
+          <option>Needs Improvement</option>
+        </select>
+
+        <textarea name="Feedback" placeholder="Write your feedback" required></textarea>
+
+        <button type="submit">Submit Feedback</button>
+      </form>
+    </div>
+
   </div>
 
   <div class="contact-info">
@@ -604,6 +661,43 @@ footer a {
 
 <a href="https://wa.me/917895376426" class="whatsapp-btn" target="_blank">WhatsApp</a>
 <a href="tel:7895376426" class="call-btn">Call Now</a>
+
+<script>
+document.getElementById("enquiryForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const formData = new FormData(this);
+
+  const body =
+    "New Tuition Enquiry:%0A%0A" +
+    "Student Name: " + encodeURIComponent(formData.get("Student Name")) + "%0A" +
+    "Parent Name: " + encodeURIComponent(formData.get("Parent Name")) + "%0A" +
+    "Mobile Number: " + encodeURIComponent(formData.get("Mobile Number")) + "%0A" +
+    "Class: " + encodeURIComponent(formData.get("Class")) + "%0A" +
+    "Subject: " + encodeURIComponent(formData.get("Subject")) + "%0A" +
+    "Tuition Type: " + encodeURIComponent(formData.get("Tuition Type")) + "%0A" +
+    "Message: " + encodeURIComponent(formData.get("Message"));
+
+  window.location.href =
+    "mailto:sainisapna2017@gmail.com?subject=New Tuition Enquiry&body=" + body;
+});
+
+document.getElementById("feedbackForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const formData = new FormData(this);
+
+  const body =
+    "New Feedback:%0A%0A" +
+    "Name: " + encodeURIComponent(formData.get("Name")) + "%0A" +
+    "Mobile Number: " + encodeURIComponent(formData.get("Mobile Number")) + "%0A" +
+    "Rating: " + encodeURIComponent(formData.get("Rating")) + "%0A" +
+    "Feedback: " + encodeURIComponent(formData.get("Feedback"));
+
+  window.location.href =
+    "mailto:sainisapna2017@gmail.com?subject=New Feedback - RS Tuition Center&body=" + body;
+});
+</script>
 
 </body>
 </html>
