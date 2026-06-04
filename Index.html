@@ -6,324 +6,332 @@
 <title>RS Tuition Center</title>
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Segoe UI', sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
 }
 
-body{
-  background:#fffaf3;
-  color:#1f2937;
+body {
+  background: #f8fbff;
+  color: #0f172a;
 }
 
-header{
-  width:100%;
-  padding:18px 8%;
-  background:#ffffff;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  position:sticky;
-  top:0;
-  z-index:10;
-  box-shadow:0 4px 20px rgba(0,0,0,0.08);
+header {
+  background: #ffffff;
+  padding: 18px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
-.logo{
-  font-size:28px;
-  font-weight:800;
-  color:#7c2d12;
+.logo {
+  font-size: 28px;
+  font-weight: 800;
+  color: #1d4ed8;
 }
 
-.logo span{
-  color:#ea580c;
+nav a {
+  text-decoration: none;
+  color: #334155;
+  margin-left: 28px;
+  font-weight: 600;
 }
 
-nav a{
-  text-decoration:none;
-  color:#374151;
-  margin-left:28px;
-  font-weight:600;
+nav a:hover {
+  color: #2563eb;
 }
 
-nav a:hover{
-  color:#ea580c;
+.hero {
+  padding: 90px 8%;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 50px;
+  align-items: center;
+  background: linear-gradient(135deg, #e0f2fe, #ffffff);
 }
 
-.hero{
-  min-height:90vh;
-  padding:80px 8%;
-  display:grid;
-  grid-template-columns:1.1fr 0.9fr;
-  gap:50px;
-  align-items:center;
-  background:
-    radial-gradient(circle at top left,#fed7aa 0,#fffaf3 35%),
-    linear-gradient(135deg,#fff7ed,#ffffff);
+.badge {
+  display: inline-block;
+  background: #dbeafe;
+  color: #1d4ed8;
+  padding: 10px 18px;
+  border-radius: 30px;
+  font-weight: 700;
+  margin-bottom: 20px;
 }
 
-.badge{
-  display:inline-block;
-  background:#ffedd5;
-  color:#c2410c;
-  padding:10px 18px;
-  border-radius:30px;
-  font-weight:700;
-  margin-bottom:20px;
+.hero h1 {
+  font-size: 56px;
+  line-height: 1.1;
+  margin-bottom: 22px;
 }
 
-.hero h1{
-  font-size:58px;
-  line-height:1.1;
-  color:#111827;
-  margin-bottom:22px;
+.hero h1 span {
+  color: #2563eb;
 }
 
-.hero h1 span{
-  color:#ea580c;
+.hero p {
+  color: #475569;
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 30px;
 }
 
-.hero p{
-  font-size:18px;
-  line-height:1.7;
-  color:#4b5563;
-  margin-bottom:32px;
-}
-
-.buttons{
-  display:flex;
-  gap:16px;
-  flex-wrap:wrap;
+.buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
 }
 
 .btn-primary,
-.btn-secondary{
-  padding:15px 28px;
-  border-radius:12px;
-  text-decoration:none;
-  font-weight:700;
+.btn-secondary {
+  padding: 15px 28px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 700;
 }
 
-.btn-primary{
-  background:#ea580c;
-  color:white;
-  box-shadow:0 8px 18px rgba(234,88,12,0.35);
+.btn-primary {
+  background: #2563eb;
+  color: white;
 }
 
-.btn-secondary{
-  background:white;
-  color:#ea580c;
-  border:2px solid #ea580c;
+.btn-secondary {
+  background: white;
+  color: #2563eb;
+  border: 2px solid #2563eb;
 }
 
-.hero-card{
-  background:#ffffff;
-  padding:35px;
-  border-radius:28px;
-  box-shadow:0 20px 45px rgba(124,45,18,0.15);
-  position:relative;
+.hero-card {
+  background: white;
+  padding: 35px;
+  border-radius: 28px;
+  box-shadow: 0 20px 45px rgba(37,99,235,0.15);
 }
 
-.hero-card:before{
-  content:"";
-  position:absolute;
-  width:120px;
-  height:120px;
-  background:#fb923c;
-  border-radius:50%;
-  top:-30px;
-  right:-30px;
-  opacity:0.18;
+.hero-card h3 {
+  color: #1d4ed8;
+  font-size: 26px;
+  margin-bottom: 18px;
 }
 
-.hero-card h3{
-  font-size:26px;
-  color:#7c2d12;
-  margin-bottom:20px;
+.hero-card ul {
+  list-style: none;
 }
 
-.hero-card ul{
-  list-style:none;
+.hero-card li {
+  background: #eff6ff;
+  color: #1e40af;
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  font-weight: 600;
 }
 
-.hero-card li{
-  background:#fff7ed;
-  padding:16px;
-  margin-bottom:14px;
-  border-radius:14px;
-  font-weight:600;
-  color:#374151;
+.section {
+  padding: 85px 8%;
 }
 
-.section{
-  padding:75px 8%;
-  text-align:center;
+.section-heading {
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto 50px;
 }
 
-.section-title{
-  font-size:40px;
-  color:#111827;
-  margin-bottom:12px;
+.section-heading span {
+  color: #2563eb;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.section-title span{
-  color:#ea580c;
+.section-heading h2 {
+  font-size: 42px;
+  margin: 12px 0;
 }
 
-.section-text{
-  color:#6b7280;
-  margin-bottom:45px;
-  font-size:17px;
+.section-heading p {
+  color: #64748b;
+  font-size: 17px;
+  line-height: 1.7;
 }
 
-.cards{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:28px;
+.modes {
+  background: #ffffff;
 }
 
-.card{
-  background:white;
-  padding:35px 28px;
-  border-radius:24px;
-  box-shadow:0 12px 30px rgba(0,0,0,0.08);
-  transition:0.3s;
-  border-bottom:5px solid transparent;
+.card-grid,
+.program-grid,
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
 }
 
-.card:hover{
-  transform:translateY(-8px);
-  border-bottom-color:#ea580c;
+.mode-card,
+.program-card,
+.feature-card {
+  background: #ffffff;
+  padding: 34px;
+  border-radius: 22px;
+  border: 1px solid #dbeafe;
+  box-shadow: 0 14px 35px rgba(37,99,235,0.10);
+  transition: 0.3s ease;
 }
 
-.card .icon{
-  width:70px;
-  height:70px;
-  background:#ffedd5;
-  color:#ea580c;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:50%;
-  font-size:32px;
-  margin:0 auto 20px;
+.mode-card:hover,
+.program-card:hover,
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(37,99,235,0.18);
 }
 
-.card h3{
-  color:#7c2d12;
-  margin-bottom:14px;
-  font-size:23px;
+.icon {
+  width: 68px;
+  height: 68px;
+  background: #dbeafe;
+  color: #2563eb;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  margin-bottom: 20px;
 }
 
-.card p{
-  color:#6b7280;
-  line-height:1.6;
+.mode-card h3,
+.program-card h3,
+.feature-card h3 {
+  font-size: 24px;
+  color: #1d4ed8;
+  margin-bottom: 14px;
 }
 
-.subject-section{
-  background:#fff7ed;
+.mode-card p,
+.program-card p,
+.feature-card p {
+  color: #475569;
+  line-height: 1.7;
 }
 
-.subject-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-  gap:18px;
+.programs {
+  background: linear-gradient(135deg, #f8fbff, #eef6ff);
 }
 
-.subject{
-  background:white;
-  padding:20px;
-  border-radius:18px;
-  font-weight:700;
-  color:#7c2d12;
-  box-shadow:0 8px 18px rgba(0,0,0,0.06);
+.program-card ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 22px;
 }
 
-.form-section{
-  background:#ffffff;
+.program-card ul li {
+  background: #eff6ff;
+  color: #1e40af;
+  padding: 12px 15px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  font-weight: 600;
 }
 
-.form-box{
-  max-width:720px;
-  margin:auto;
-  background:#fff7ed;
-  padding:35px;
-  border-radius:26px;
-  box-shadow:0 15px 35px rgba(0,0,0,0.08);
+.features {
+  background: #ffffff;
 }
 
-form{
-  display:grid;
-  gap:16px;
+.form-section {
+  background: linear-gradient(135deg, #eff6ff, #ffffff);
 }
 
-input,select,textarea{
-  padding:15px;
-  border:1px solid #fed7aa;
-  border-radius:12px;
-  font-size:15px;
-  outline:none;
+.form-box {
+  max-width: 720px;
+  margin: auto;
+  background: white;
+  padding: 36px;
+  border-radius: 26px;
+  box-shadow: 0 16px 40px rgba(37,99,235,0.12);
+}
+
+form {
+  display: grid;
+  gap: 16px;
+}
+
+input,
+select,
+textarea {
+  padding: 15px;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  font-size: 15px;
+  outline: none;
 }
 
 input:focus,
 select:focus,
-textarea:focus{
-  border-color:#ea580c;
-  box-shadow:0 0 0 3px rgba(234,88,12,0.12);
+textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.12);
 }
 
-textarea{
-  height:110px;
-  resize:none;
+textarea {
+  height: 110px;
+  resize: none;
 }
 
-button{
-  background:#ea580c;
-  color:white;
-  border:none;
-  padding:16px;
-  border-radius:12px;
-  font-size:17px;
-  font-weight:800;
-  cursor:pointer;
+button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 16px;
+  border-radius: 12px;
+  font-size: 17px;
+  font-weight: 800;
+  cursor: pointer;
 }
 
-footer{
-  background:#7c2d12;
-  color:white;
-  text-align:center;
-  padding:30px 8%;
+footer {
+  background: #1e3a8a;
+  color: white;
+  text-align: center;
+  padding: 30px 8%;
 }
 
-@media(max-width:768px){
-  header{
-    flex-direction:column;
-    gap:15px;
+@media(max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 15px;
   }
 
-  nav a{
-    margin:0 8px;
-    font-size:14px;
+  nav a {
+    margin: 0 8px;
+    font-size: 14px;
   }
 
-  .hero{
-    grid-template-columns:1fr;
-    text-align:center;
-    padding:60px 6%;
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 65px 6%;
   }
 
-  .hero h1{
-    font-size:38px;
+  .hero h1 {
+    font-size: 38px;
   }
 
-  .buttons{
-    justify-content:center;
+  .buttons {
+    justify-content: center;
   }
 
-  .section-title{
-    font-size:32px;
+  .hero-card {
+    text-align: left;
+  }
+
+  .section-heading h2 {
+    font-size: 32px;
   }
 }
 </style>
@@ -332,11 +340,11 @@ footer{
 <body>
 
 <header>
-  <div class="logo">RS <span>Tuition Center</span></div>
+  <div class="logo">RS Tuition Center</div>
   <nav>
     <a href="#home">Home</a>
+    <a href="#modes">Tuition Modes</a>
     <a href="#classes">Classes</a>
-    <a href="#subjects">Subjects</a>
     <a href="#contact">Contact</a>
   </nav>
 </header>
@@ -344,109 +352,181 @@ footer{
 <section class="hero" id="home">
   <div>
     <div class="badge">Admissions Open 2026</div>
-    <h1>Smart Learning for <span>Better Results</span></h1>
+    <h1>Quality Tuition for <span>Better Learning</span></h1>
     <p>
-      RS Tuition Center provides Online Classes, Offline Classes, and Home Tuition
-      with expert teachers, personal attention, regular tests, and complete doubt support.
+      RS Tuition Center provides online classes, offline classes, and home tuition
+      with expert teachers, personal guidance, regular practice, and strong academic support.
     </p>
+
     <div class="buttons">
       <a href="#contact" class="btn-primary">Book Free Demo</a>
-      <a href="#classes" class="btn-secondary">View Classes</a>
+      <a href="#classes" class="btn-secondary">View Courses</a>
     </div>
   </div>
 
   <div class="hero-card">
-    <h3>Available Tuition Options</h3>
+    <h3>What We Offer</h3>
     <ul>
-      <li>Online Live Classes</li>
-      <li>Offline Classroom Batches</li>
+      <li>Online Live Tuition Classes</li>
+      <li>Offline Classroom Tuition</li>
       <li>Personal Home Tuition</li>
-      <li>Class 1 to Class 12</li>
-      <li>CBSE / ICSE / State Board</li>
+      <li>Special Batches for Class 9th to 12th</li>
+      <li>All Subjects for Below Class 9th</li>
     </ul>
   </div>
 </section>
 
-<section class="section" id="classes">
-  <h2 class="section-title">Our <span>Tuition Modes</span></h2>
-  <p class="section-text">Choose the best learning method for your child.</p>
+<section class="section modes" id="modes">
+  <div class="section-heading">
+    <span>Learning Options</span>
+    <h2>Choose Your Tuition Mode</h2>
+    <p>
+      Students can select the best learning option according to their comfort,
+      schedule, and academic needs.
+    </p>
+  </div>
 
-  <div class="cards">
-    <div class="card">
+  <div class="card-grid">
+    <div class="mode-card">
       <div class="icon">💻</div>
       <h3>Online Classes</h3>
-      <p>Live classes, recorded lessons, digital notes, online tests, and doubt sessions.</p>
+      <p>
+        Live interactive classes with digital notes, online doubt sessions,
+        assignments, and regular practice tests from home.
+      </p>
     </div>
 
-    <div class="card">
+    <div class="mode-card">
       <div class="icon">🏫</div>
       <h3>Offline Classes</h3>
-      <p>Classroom learning with expert teachers, regular practice, and test preparation.</p>
+      <p>
+        Classroom-based learning with face-to-face teaching, group discussion,
+        regular revision, and exam-focused preparation.
+      </p>
     </div>
 
-    <div class="card">
+    <div class="mode-card">
       <div class="icon">🏠</div>
       <h3>Home Tuition</h3>
-      <p>One-to-one personal tuition at home with customized study support.</p>
+      <p>
+        Personal one-to-one tuition at home with customized teaching,
+        flexible timing, and individual attention.
+      </p>
     </div>
   </div>
 </section>
 
-<section class="section subject-section" id="subjects">
-  <h2 class="section-title">Subjects <span>We Teach</span></h2>
-  <p class="section-text">Complete academic support for all major subjects.</p>
+<section class="section programs" id="classes">
+  <div class="section-heading">
+    <span>Our Classes</span>
+    <h2>Courses Offered at RS Tuition Center</h2>
+    <p>
+      We provide structured tuition classes for senior, secondary, and junior students
+      through online, offline, and home tuition modes.
+    </p>
+  </div>
 
-  <div class="subject-grid">
-    <div class="subject">Mathematics</div>
-    <div class="subject">Science</div>
-    <div class="subject">English</div>
-    <div class="subject">Hindi</div>
-    <div class="subject">Social Studies</div>
-    <div class="subject">Computer</div>
-    <div class="subject">Commerce</div>
-    <div class="subject">All Subjects</div>
+  <div class="program-grid">
+    <div class="program-card">
+      <h3>Class 11th - 12th</h3>
+      <p>
+        Special focused classes for higher secondary students with concept-based
+        learning, exam preparation, numerical practice, and regular doubt sessions.
+      </p>
+      <ul>
+        <li>Physics</li>
+        <li>Chemistry</li>
+        <li>Mathematics</li>
+      </ul>
+    </div>
+
+    <div class="program-card">
+      <h3>Class 9th - 10th</h3>
+      <p>
+        Complete academic support for board preparation with regular tests,
+        chapter-wise revision, and strong foundation building.
+      </p>
+      <ul>
+        <li>Science</li>
+        <li>Mathematics</li>
+        <li>English</li>
+      </ul>
+    </div>
+
+    <div class="program-card">
+      <h3>Below Class 9th</h3>
+      <p>
+        All-subject tuition for junior students with homework support,
+        basic concept clarity, reading improvement, and personal guidance.
+      </p>
+      <ul>
+        <li>All Subjects</li>
+        <li>Homework Support</li>
+        <li>Basic Concept Building</li>
+      </ul>
+    </div>
   </div>
 </section>
 
-<section class="section">
-  <h2 class="section-title">Why Choose <span>Us?</span></h2>
+<section class="section features">
+  <div class="section-heading">
+    <span>Why Choose Us</span>
+    <h2>Why Students Prefer RS Tuition Center</h2>
+    <p>
+      Our teaching approach focuses on understanding, confidence, discipline,
+      and better academic performance.
+    </p>
+  </div>
 
-  <div class="cards">
-    <div class="card">
-      <h3>Experienced Teachers</h3>
-      <p>Qualified teachers focused on concept clarity and strong academic results.</p>
+  <div class="feature-grid">
+    <div class="feature-card">
+      <h3>Expert Teachers</h3>
+      <p>Experienced teachers provide subject-wise guidance and personal attention.</p>
     </div>
 
-    <div class="card">
-      <h3>Weekly Tests</h3>
-      <p>Regular tests help students improve performance and exam confidence.</p>
+    <div class="feature-card">
+      <h3>Regular Tests</h3>
+      <p>Weekly tests and revision sessions help students prepare better for exams.</p>
     </div>
 
-    <div class="card">
-      <h3>Doubt Support</h3>
-      <p>Dedicated doubt-clearing sessions for better understanding.</p>
+    <div class="feature-card">
+      <h3>Doubt Sessions</h3>
+      <p>Special doubt-clearing support is provided for difficult topics and chapters.</p>
     </div>
 
-    <div class="card">
-      <h3>Flexible Timings</h3>
-      <p>Morning and evening batches available for students.</p>
+    <div class="feature-card">
+      <h3>Performance Tracking</h3>
+      <p>Student progress is monitored regularly to improve weak areas.</p>
     </div>
   </div>
 </section>
 
 <section class="section form-section" id="contact">
-  <h2 class="section-title">Book Free <span>Demo Class</span></h2>
-  <p class="section-text">Submit your enquiry and we will contact you soon.</p>
+  <div class="section-heading">
+    <span>Contact Us</span>
+    <h2>Book a Free Demo Class</h2>
+    <p>
+      Fill the enquiry form and our team will contact you soon.
+    </p>
+  </div>
 
   <div class="form-box">
     <form>
       <input type="text" placeholder="Student Name" required>
       <input type="text" placeholder="Parent Name" required>
       <input type="tel" placeholder="Mobile Number" required>
-      <input type="text" placeholder="Class / Grade" required>
+
+      <select required>
+        <option value="">Select Class</option>
+        <option>Class 11th - 12th</option>
+        <option>Class 9th - 10th</option>
+        <option>Below Class 9th</option>
+      </select>
 
       <select required>
         <option value="">Select Subject</option>
+        <option>Physics</option>
+        <option>Chemistry</option>
         <option>Mathematics</option>
         <option>Science</option>
         <option>English</option>
