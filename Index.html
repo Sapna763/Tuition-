@@ -294,11 +294,50 @@ button {
   cursor: pointer;
 }
 
+.contact-info {
+  margin-top: 35px;
+  text-align: center;
+}
+
+.contact-info a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 700;
+}
+
 footer {
   background: #1e3a8a;
   color: white;
   text-align: center;
   padding: 30px 8%;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+.call-btn,
+.whatsapp-btn {
+  position: fixed;
+  right: 20px;
+  color: white;
+  text-decoration: none;
+  padding: 14px 22px;
+  border-radius: 50px;
+  font-weight: 700;
+  z-index: 999;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+.call-btn {
+  bottom: 20px;
+  background: #2563eb;
+}
+
+.whatsapp-btn {
+  bottom: 80px;
+  background: #25D366;
 }
 
 @media(max-width: 768px) {
@@ -370,8 +409,11 @@ footer {
       <li>Online Live Tuition Classes</li>
       <li>Offline Classroom Tuition</li>
       <li>Personal Home Tuition</li>
-      <li>Special Batches for Class 9th to 12th</li>
-      <li>All Subjects for Below Class 9th</li>
+      <li>Class 11th - 12th: Physics, Chemistry, Mathematics</li>
+      <li>Class 9th - 10th: Science, Mathematics, English</li>
+      <li>Below Class 9th: All Subjects</li>
+      <li>Contact: <a href="tel:7895376426">7895376426</a></li>
+      <li>Email: <a href="mailto:sainisapna2017@gmail.com">sainisapna2017@gmail.com</a></li>
     </ul>
   </div>
 </section>
@@ -511,19 +553,19 @@ footer {
   </div>
 
   <div class="form-box">
-    <form>
-      <input type="text" placeholder="Student Name" required>
-      <input type="text" placeholder="Parent Name" required>
-      <input type="tel" placeholder="Mobile Number" required>
+    <form action="mailto:sainisapna2017@gmail.com" method="post" enctype="text/plain">
+      <input type="text" name="Student Name" placeholder="Student Name" required>
+      <input type="text" name="Parent Name" placeholder="Parent Name" required>
+      <input type="tel" name="Mobile Number" placeholder="Mobile Number" required>
 
-      <select required>
+      <select name="Class" required>
         <option value="">Select Class</option>
         <option>Class 11th - 12th</option>
         <option>Class 9th - 10th</option>
         <option>Below Class 9th</option>
       </select>
 
-      <select required>
+      <select name="Subject" required>
         <option value="">Select Subject</option>
         <option>Physics</option>
         <option>Chemistry</option>
@@ -533,24 +575,35 @@ footer {
         <option>All Subjects</option>
       </select>
 
-      <select required>
+      <select name="Tuition Type" required>
         <option value="">Select Tuition Type</option>
         <option>Online Classes</option>
         <option>Offline Classes</option>
         <option>Home Tuition</option>
       </select>
 
-      <textarea placeholder="Message"></textarea>
+      <textarea name="Message" placeholder="Message"></textarea>
 
       <button type="submit">Submit Enquiry</button>
     </form>
+  </div>
+
+  <div class="contact-info">
+    <p>Call: <a href="tel:7895376426">7895376426</a></p>
+    <p>Email: <a href="mailto:sainisapna2017@gmail.com">sainisapna2017@gmail.com</a></p>
   </div>
 </section>
 
 <footer>
   <p>© 2026 RS Tuition Center. All Rights Reserved.</p>
-  <p>Contact: +91 7895376426 | Email: sainisapna2017@gmail.com</p>
+  <p>
+    Contact: <a href="tel:7895376426">7895376426</a> |
+    Email: <a href="mailto:sainisapna2017@gmail.com">sainisapna2017@gmail.com</a>
+  </p>
 </footer>
+
+<a href="https://wa.me/917895376426" class="whatsapp-btn" target="_blank">WhatsApp</a>
+<a href="tel:7895376426" class="call-btn">Call Now</a>
 
 </body>
 </html>
