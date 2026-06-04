@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>RS Tuition Center1</title>
+<title>RS Tuition Center</title>
 
 <style>
 * {
@@ -305,6 +305,70 @@ footer a {
     font-size: 32px;
   }
 }
+
+/* Toast Notification Style */
+.toast {
+  position: fixed;
+  bottom: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #0b4f8a;
+  color: white;
+  padding: 16px 28px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 600;
+  z-index: 2000;
+  transition: bottom 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.toast.show {
+  bottom: 30px;
+}
+
+.toast.error {
+  background: #ef4444;
+}
+
+.toast-icon {
+  background: rgba(255,255,255,0.2);
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 14px;
+}
+
+/* Loading spinner style on submit buttons */
+button.loading {
+  position: relative;
+  color: transparent !important;
+  pointer-events: none;
+}
+
+button.loading::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  left: 50%;
+  margin-top: -10px;
+  margin-left: -10px;
+  border: 3px solid rgba(255,255,255,0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 0.8s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
 </style>
 </head>
 
@@ -313,7 +377,7 @@ footer a {
 <header>
   <div class="logo">RS Tuition Center</div>
   <nav>
-    <a href="#home">Home</a>
+    <a href="#home">Home1</a>
     <a href="#classes">Classes</a>
     <a href="#reviews">Reviews</a>
     <a href="#contact">Contact</a>
@@ -554,6 +618,104 @@ footer a {
 
 <a href="https://wa.me/917895376426" target="_blank" class="float-whatsapp">WhatsApp</a>
 <a href="tel:7895376426" class="float-call">Call Now</a>
+
+<!-- Toast Notification -->
+<div id="toast" class="toast">
+  <div class="toast-content" style="display: flex; align-items: center; gap: 10px;">
+    <span class="toast-icon">✓</span>
+    <span id="toast-message" class="toast-message">Submission successful!</span>
+  </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const forms = document.querySelectorAll("form");
+  const toast = document.getElementById("toast");
+  const toastMessage = document.getElementById("toast-message");
+  const toastIcon = toast.querySelector(".toast-icon");
+  let toastTimeout;
+
+  function showToast(message, isError = false) {
+    clearTimeout(toastTimeout);
+    toastMessage.textContent = message;
+    
+    if (isError) {
+      toast.classList.add("error");
+      toastIcon.textContent = "✕";
+    } else {
+      toast.classList.remove("error");
+      toastIcon.textContent = "✓";
+    }
+    
+    toast.classList.add("show");
+    
+    toastTimeout = setTimeout(() => {
+      toast.classList.remove("show");
+    }, 5000);
+  }
+
+  forms.forEach(form => {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      
+      const submitButton = form.querySelector("button[type='submit']");
+      
+      // Set loading state
+      submitButton.classList.add("loading");
+      
+      // Extract form data
+      const formData = new FormData(form);
+      const data = {};
+      formData.forEach((value, key) => {
+        data[key] = value;
+      });
+      
+      // Send to FormSubmit AJAX endpoint
+      let actionUrl = form.getAttribute("action");
+      if (actionUrl && actionUrl.includes("formsubmit.co") && !actionUrl.includes("/ajax/")) {
+        actionUrl = actionUrl.replace("formsubmit.co/", "formsubmit.co/ajax/");
+      } else if (!actionUrl) {
+        actionUrl = "https://formsubmit.co/ajax/sainisapna2017@gmail.com";
+      }
+
+      fetch(actionUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify(data)
+      })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then(result => {
+        submitButton.classList.remove("loading");
+        
+        // FormSubmit AJAX returns { success: "true", message: "..." }
+        if (result.success === "true" || result.success === true || result.status === "success") {
+          showToast("Thank you! Your submission has been received successfully.");
+          form.reset();
+        } else {
+          if (result.message && result.message.includes("activate")) {
+            showToast("Please check your email to activate FormSubmit for this address.", false);
+          } else {
+            showToast(result.message || "Submission failed. Please try again.", true);
+          }
+        }
+      })
+      .catch(error => {
+        submitButton.classList.remove("loading");
+        console.error("Error submitting form:", error);
+        showToast("Error submitting. Please try again later.", true);
+      });
+    });
+  });
+});
+</script>
 
 </body>
 </html>
