@@ -1,297 +1,308 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>RS Tuition Center</title>
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Arial, sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
 }
 
-body{
-  background:#f5f7fb;
-  color:#172033;
+body {
+  background: #f4f8ff;
+  color: #102033;
 }
 
-.header{
-  background:#ffffff;
-  padding:18px 8%;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  box-shadow:0 4px 20px rgba(0,0,0,0.08);
+header {
+  background: #ffffff;
+  padding: 18px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-.logo{
-  font-size:28px;
-  font-weight:800;
-  color:#0f4c81;
+.logo {
+  font-size: 28px;
+  font-weight: 800;
+  color: #0b4f8a;
 }
 
-.nav a{
-  margin-left:22px;
-  text-decoration:none;
-  color:#172033;
-  font-weight:600;
+nav a {
+  text-decoration: none;
+  margin-left: 22px;
+  color: #26364a;
+  font-weight: 600;
 }
 
-.hero{
-  padding:80px 8%;
-  background:linear-gradient(135deg,#0f4c81,#1e88e5);
-  color:white;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:45px;
-  align-items:center;
+.hero {
+  padding: 90px 8%;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 45px;
+  align-items: center;
+  background: linear-gradient(135deg, #0b4f8a, #168aad);
+  color: white;
 }
 
-.hero h1{
-  font-size:54px;
-  margin-bottom:20px;
+.hero h1 {
+  font-size: 56px;
+  line-height: 1.1;
+  margin-bottom: 20px;
 }
 
-.hero p{
-  font-size:18px;
-  line-height:1.7;
-  margin-bottom:28px;
+.hero p {
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 28px;
 }
 
-.btn{
-  display:inline-block;
-  background:#ffb703;
-  color:#172033;
-  padding:14px 28px;
-  border-radius:8px;
-  text-decoration:none;
-  font-weight:700;
+.btn {
+  background: #ffd166;
+  color: #102033;
+  padding: 14px 28px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 800;
+  display: inline-block;
 }
 
-.hero-box{
-  background:white;
-  color:#172033;
-  padding:35px;
-  border-radius:22px;
-  box-shadow:0 15px 35px rgba(0,0,0,0.18);
+.hero-card {
+  background: #ffffff;
+  color: #102033;
+  padding: 34px;
+  border-radius: 24px;
+  box-shadow: 0 20px 45px rgba(0,0,0,0.18);
 }
 
-.hero-box h3{
-  color:#0f4c81;
-  margin-bottom:18px;
-  font-size:26px;
+.hero-card h3 {
+  color: #0b4f8a;
+  font-size: 26px;
+  margin-bottom: 18px;
 }
 
-.hero-box p{
-  color:#334155;
-  background:#eef6ff;
-  padding:13px;
-  border-radius:10px;
-  margin-bottom:12px;
-  font-weight:600;
+.hero-card p {
+  background: #eef7ff;
+  color: #26364a;
+  padding: 13px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  font-weight: 600;
 }
 
-.section{
-  padding:75px 8%;
+.section {
+  padding: 80px 8%;
 }
 
-.title{
-  text-align:center;
-  margin-bottom:45px;
+.title {
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto 48px;
 }
 
-.title h2{
-  font-size:40px;
-  color:#0f4c81;
-  margin-bottom:12px;
+.title h2 {
+  font-size: 40px;
+  color: #0b4f8a;
+  margin-bottom: 12px;
 }
 
-.title p{
-  color:#64748b;
-  font-size:17px;
+.title p {
+  color: #5f6f83;
+  font-size: 17px;
+  line-height: 1.6;
 }
 
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:25px;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 26px;
 }
 
-.card{
-  background:white;
-  padding:30px;
-  border-radius:18px;
-  box-shadow:0 10px 28px rgba(0,0,0,0.08);
-  border-top:5px solid #1e88e5;
+.card {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  border-top: 5px solid #168aad;
 }
 
-.card h3{
-  color:#0f4c81;
-  margin-bottom:14px;
-  font-size:24px;
+.card h3 {
+  color: #0b4f8a;
+  font-size: 24px;
+  margin-bottom: 14px;
 }
 
-.card p{
-  color:#475569;
-  line-height:1.7;
-  margin-bottom:16px;
+.card p {
+  color: #526276;
+  line-height: 1.7;
+  margin-bottom: 16px;
 }
 
-.card ul{
-  list-style:none;
+.card ul {
+  list-style: none;
 }
 
-.card li{
-  background:#eef6ff;
-  padding:11px;
-  border-radius:8px;
-  margin-bottom:9px;
-  font-weight:600;
+.card li {
+  background: #eef7ff;
+  padding: 11px;
+  border-radius: 8px;
+  margin-bottom: 9px;
+  font-weight: 600;
 }
 
-.light{
-  background:#eef6ff;
+.light {
+  background: #eaf5ff;
 }
 
-.form-area{
-  background:white;
+.rating {
+  color: #f59e0b;
+  font-size: 22px;
+  margin-bottom: 12px;
 }
 
-.forms{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-  gap:30px;
+.forms {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
 }
 
-.form-box{
-  background:#f8fbff;
-  padding:32px;
-  border-radius:20px;
-  box-shadow:0 10px 28px rgba(0,0,0,0.08);
+.form-box {
+  background: white;
+  padding: 32px;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
 }
 
-.form-box h3{
-  color:#0f4c81;
-  font-size:26px;
-  margin-bottom:10px;
+.form-box h3 {
+  color: #0b4f8a;
+  font-size: 26px;
+  margin-bottom: 10px;
 }
 
-.form-box p{
-  color:#64748b;
-  margin-bottom:20px;
+.form-box p {
+  color: #5f6f83;
+  margin-bottom: 22px;
 }
 
-form{
-  display:grid;
-  gap:14px;
+form {
+  display: grid;
+  gap: 14px;
 }
 
-input,select,textarea{
-  padding:14px;
-  border:1px solid #cbd5e1;
-  border-radius:9px;
-  font-size:15px;
+input,
+select,
+textarea {
+  padding: 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 9px;
+  font-size: 15px;
 }
 
-textarea{
-  height:100px;
-  resize:none;
+textarea {
+  height: 105px;
+  resize: none;
 }
 
-button{
-  background:#0f4c81;
-  color:white;
-  border:none;
-  padding:15px;
-  border-radius:9px;
-  font-size:16px;
-  font-weight:700;
-  cursor:pointer;
+button {
+  background: #0b4f8a;
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 9px;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
 }
 
-.success{
-  display:none;
-  background:#dcfce7;
-  color:#166534;
-  padding:14px;
-  border-radius:9px;
-  margin-top:15px;
-  font-weight:700;
+button:hover {
+  background: #073b69;
 }
 
-.contact{
-  text-align:center;
-  margin-top:35px;
-  line-height:1.8;
-  font-weight:700;
+.contact {
+  text-align: center;
+  margin-top: 35px;
+  line-height: 1.8;
+  font-weight: 700;
 }
 
-.contact a{
-  color:#0f4c81;
-  text-decoration:none;
+.contact a {
+  color: #0b4f8a;
+  text-decoration: none;
 }
 
-.footer{
-  background:#0f4c81;
-  color:white;
-  text-align:center;
-  padding:28px 8%;
+footer {
+  background: #0b4f8a;
+  color: white;
+  text-align: center;
+  padding: 28px 8%;
 }
 
-.footer a{
-  color:white;
-  text-decoration:none;
+footer a {
+  color: white;
+  text-decoration: none;
 }
 
-.float-call{
-  position:fixed;
-  right:20px;
-  bottom:20px;
-  background:#0f4c81;
-  color:white;
-  padding:14px 22px;
-  border-radius:50px;
-  text-decoration:none;
-  font-weight:700;
+.float-call,
+.float-whatsapp {
+  position: fixed;
+  right: 20px;
+  color: white;
+  text-decoration: none;
+  padding: 14px 22px;
+  border-radius: 50px;
+  font-weight: 800;
+  z-index: 999;
 }
 
-.float-whatsapp{
-  position:fixed;
-  right:20px;
-  bottom:78px;
-  background:#25D366;
-  color:white;
-  padding:14px 22px;
-  border-radius:50px;
-  text-decoration:none;
-  font-weight:700;
+.float-call {
+  bottom: 20px;
+  background: #0b4f8a;
 }
 
-@media(max-width:768px){
-  .header{
-    flex-direction:column;
-    gap:12px;
+.float-whatsapp {
+  bottom: 78px;
+  background: #25D366;
+}
+
+@media(max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 12px;
   }
 
-  .nav{
-    text-align:center;
+  nav {
+    text-align: center;
   }
 
-  .nav a{
-    margin:0 8px;
-    font-size:14px;
+  nav a {
+    margin: 0 8px;
+    font-size: 14px;
   }
 
-  .hero{
-    grid-template-columns:1fr;
-    text-align:center;
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 65px 6%;
   }
 
-  .hero h1{
-    font-size:38px;
+  .hero h1 {
+    font-size: 38px;
+  }
+
+  .section {
+    padding: 60px 6%;
+  }
+
+  .title h2 {
+    font-size: 32px;
   }
 }
 </style>
@@ -299,28 +310,27 @@ button{
 
 <body>
 
-<div class="header">
+<header>
   <div class="logo">RS Tuition Center</div>
-  <div class="nav">
+  <nav>
     <a href="#home">Home</a>
     <a href="#classes">Classes</a>
-    <a href="#enquiry">Enquiry</a>
-    <a href="#feedback">Feedback</a>
-  </div>
-</div>
+    <a href="#reviews">Reviews</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
 <section class="hero" id="home">
   <div>
     <h1>Best Tuition Classes for Better Results</h1>
     <p>
       RS Tuition Center provides Online Classes, Offline Classes, and Home Tuition
-      for students with personal attention, regular tests, doubt sessions, and
-      strong academic guidance.
+      with expert teachers, personal attention, regular tests, and doubt-clearing support.
     </p>
-    <a href="#enquiry" class="btn">Book Free Demo Class</a>
+    <a href="#contact" class="btn">Book Free Demo Class</a>
   </div>
 
-  <div class="hero-box">
+  <div class="hero-card">
     <h3>Admissions Open</h3>
     <p>Online Tuition Classes</p>
     <p>Offline Classroom Classes</p>
@@ -334,23 +344,23 @@ button{
 <section class="section">
   <div class="title">
     <h2>Tuition Modes</h2>
-    <p>Select the learning mode that is best for your child.</p>
+    <p>Choose the best learning option according to your child’s comfort and schedule.</p>
   </div>
 
   <div class="grid">
     <div class="card">
       <h3>Online Classes</h3>
-      <p>Live classes from home with digital notes, assignments, and online doubt support.</p>
+      <p>Live online classes with digital notes, regular assignments, and online doubt support.</p>
     </div>
 
     <div class="card">
       <h3>Offline Classes</h3>
-      <p>Classroom learning with face-to-face teaching, regular tests, and revision.</p>
+      <p>Classroom learning with face-to-face teaching, revision, and regular test practice.</p>
     </div>
 
     <div class="card">
       <h3>Home Tuition</h3>
-      <p>Personal home tuition with one-to-one attention and flexible timing.</p>
+      <p>Personal one-to-one home tuition with flexible timing and individual attention.</p>
     </div>
   </div>
 </section>
@@ -358,13 +368,13 @@ button{
 <section class="section light" id="classes">
   <div class="title">
     <h2>Courses Offered</h2>
-    <p>Structured tuition classes for school students.</p>
+    <p>Structured tuition classes for senior, secondary, and junior students.</p>
   </div>
 
   <div class="grid">
     <div class="card">
       <h3>Class 11th - 12th</h3>
-      <p>Focused preparation for higher secondary students with numerical practice and exam support.</p>
+      <p>Focused learning for higher secondary students with numerical practice and exam support.</p>
       <ul>
         <li>Physics</li>
         <li>Chemistry</li>
@@ -397,18 +407,18 @@ button{
 <section class="section">
   <div class="title">
     <h2>Why Choose RS Tuition Center?</h2>
-    <p>We focus on concept clarity, confidence, and better academic results.</p>
+    <p>Our teaching method focuses on concept clarity, confidence, and better academic results.</p>
   </div>
 
   <div class="grid">
     <div class="card">
       <h3>Experienced Teachers</h3>
-      <p>Subject-wise guidance from experienced teachers.</p>
+      <p>Subject-wise guidance from experienced and supportive teachers.</p>
     </div>
 
     <div class="card">
       <h3>Regular Tests</h3>
-      <p>Weekly tests and revision sessions for better exam preparation.</p>
+      <p>Weekly tests and revision sessions help students prepare better for exams.</p>
     </div>
 
     <div class="card">
@@ -418,15 +428,42 @@ button{
 
     <div class="card">
       <h3>Progress Tracking</h3>
-      <p>Student performance is monitored regularly.</p>
+      <p>Student performance is monitored regularly to improve weak areas.</p>
     </div>
   </div>
 </section>
 
-<section class="section form-area" id="enquiry">
+<section class="section light" id="reviews">
+  <div class="title">
+    <h2>Student Reviews</h2>
+    <p>What students and parents say about RS Tuition Center.</p>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <div class="rating">★★★★★</div>
+      <h3>Excellent Teaching</h3>
+      <p>Teachers explain every concept clearly. My marks improved after joining RS Tuition Center.</p>
+    </div>
+
+    <div class="card">
+      <div class="rating">★★★★★</div>
+      <h3>Very Helpful Classes</h3>
+      <p>Regular tests and doubt sessions helped me prepare better for exams.</p>
+    </div>
+
+    <div class="card">
+      <div class="rating">★★★★☆</div>
+      <h3>Good Support</h3>
+      <p>Home tuition is very helpful because the teacher gives personal attention.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact">
   <div class="title">
     <h2>Enquiry & Feedback</h2>
-    <p>Submit your details. We will contact you soon.</p>
+    <p>Submit your enquiry or feedback. Details will be sent to email.</p>
   </div>
 
   <div class="forms">
@@ -435,19 +472,22 @@ button{
       <h3>Book Free Demo Class</h3>
       <p>Fill this form for tuition enquiry.</p>
 
-      <form id="enquiryForm">
-        <input type="text" id="studentName" placeholder="Student Name" required>
-        <input type="text" id="parentName" placeholder="Parent Name" required>
-        <input type="tel" id="mobile" placeholder="Mobile Number" required>
+      <form action="https://formsubmit.co/sainisapna2017@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="New Tuition Enquiry - RS Tuition Center">
+        <input type="hidden" name="_captcha" value="false">
 
-        <select id="className" required>
+        <input type="text" name="Student Name" placeholder="Student Name" required>
+        <input type="text" name="Parent Name" placeholder="Parent Name" required>
+        <input type="tel" name="Mobile Number" placeholder="Mobile Number" required>
+
+        <select name="Class" required>
           <option value="">Select Class</option>
           <option>Class 11th - 12th</option>
           <option>Class 9th - 10th</option>
           <option>Below Class 9th</option>
         </select>
 
-        <select id="subject" required>
+        <select name="Subject" required>
           <option value="">Select Subject</option>
           <option>Physics</option>
           <option>Chemistry</option>
@@ -457,46 +497,43 @@ button{
           <option>All Subjects</option>
         </select>
 
-        <select id="tuitionType" required>
+        <select name="Tuition Type" required>
           <option value="">Select Tuition Type</option>
           <option>Online Classes</option>
           <option>Offline Classes</option>
           <option>Home Tuition</option>
         </select>
 
-        <textarea id="message" placeholder="Message"></textarea>
+        <textarea name="Message" placeholder="Message"></textarea>
+
         <button type="submit">Submit Enquiry</button>
       </form>
-
-      <div class="success" id="enquirySuccess">
-        Enquiry submitted successfully. RS Tuition Center will contact you soon.
-      </div>
     </div>
 
-    <div class="form-box" id="feedback">
+    <div class="form-box">
       <h3>Feedback Form</h3>
       <p>Share your feedback or suggestion.</p>
 
-      <form id="feedbackForm">
-        <input type="text" id="feedbackName" placeholder="Your Name" required>
-        <input type="tel" id="feedbackMobile" placeholder="Mobile Number" required>
+      <form action="https://formsubmit.co/sainisapna2017@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="New Feedback - RS Tuition Center">
+        <input type="hidden" name="_captcha" value="false">
 
-        <select id="rating" required>
+        <input type="text" name="Name" placeholder="Your Name" required>
+        <input type="tel" name="Mobile Number" placeholder="Mobile Number" required>
+
+        <select name="Rating" required>
           <option value="">Select Rating</option>
-          <option>Excellent</option>
-          <option>Very Good</option>
-          <option>Good</option>
-          <option>Average</option>
-          <option>Needs Improvement</option>
+          <option value="5 Stars">★★★★★ Excellent</option>
+          <option value="4 Stars">★★★★ Very Good</option>
+          <option value="3 Stars">★★★ Good</option>
+          <option value="2 Stars">★★ Average</option>
+          <option value="1 Star">★ Needs Improvement</option>
         </select>
 
-        <textarea id="feedbackText" placeholder="Write your feedback" required></textarea>
+        <textarea name="Feedback" placeholder="Write your feedback" required></textarea>
+
         <button type="submit">Submit Feedback</button>
       </form>
-
-      <div class="success" id="feedbackSuccess">
-        Feedback submitted successfully. Thank you for sharing your feedback.
-      </div>
     </div>
 
   </div>
@@ -507,30 +544,16 @@ button{
   </div>
 </section>
 
-<div class="footer">
+<footer>
   <p>© 2026 RS Tuition Center. All Rights Reserved.</p>
   <p>
     Contact: <a href="tel:7895376426">7895376426</a> |
     Email: <a href="mailto:sainisapna2017@gmail.com">sainisapna2017@gmail.com</a>
   </p>
-</div>
+</footer>
 
 <a href="https://wa.me/917895376426" target="_blank" class="float-whatsapp">WhatsApp</a>
 <a href="tel:7895376426" class="float-call">Call Now</a>
-
-<script>
-document.getElementById("enquiryForm").addEventListener("submit", function(e){
-  e.preventDefault();
-  document.getElementById("enquirySuccess").style.display = "block";
-  this.reset();
-});
-
-document.getElementById("feedbackForm").addEventListener("submit", function(e){
-  e.preventDefault();
-  document.getElementById("feedbackSuccess").style.display = "block";
-  this.reset();
-});
-</script>
 
 </body>
 </html>
