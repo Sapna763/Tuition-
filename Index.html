@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RS Tuition Center</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f6f8ff;
+      color: #222;
+    }
+
+    header {
+      background: #1e3a8a;
+      color: white;
+      padding: 18px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h2 {
+      font-size: 26px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 25px;
+      font-weight: bold;
+    }
+
+    .hero {
+      padding: 80px 8%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: linear-gradient(to right, #dbeafe, #eff6ff);
+    }
+
+    .hero-content {
+      max-width: 550px;
+    }
+
+    .hero-content h1 {
+      font-size: 48px;
+      color: #1e3a8a;
+      margin-bottom: 20px;
+    }
+
+    .hero-content p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      background: #f97316;
+      color: white;
+      padding: 14px 28px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      display: inline-block;
+    }
+
+    .hero-box {
+      background: white;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+      width: 360px;
+    }
+
+    .hero-box h3 {
+      color: #1e3a8a;
+      margin-bottom: 15px;
+    }
+
+    .section {
+      padding: 70px 8%;
+      text-align: center;
+    }
+
+    .section h2 {
+      font-size: 36px;
+      color: #1e3a8a;
+      margin-bottom: 15px;
+    }
+
+    .section p {
+      color: #555;
+      margin-bottom: 40px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 14px;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+
+    .card h3 {
+      color: #1e3a8a;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    .subjects {
+      background: #eef4ff;
+    }
+
+    .subject-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 18px;
+      margin-top: 30px;
+    }
+
+    .subject-list div {
+      background: white;
+      padding: 18px;
+      border-radius: 10px;
+      font-weight: bold;
+      color: #1e3a8a;
+    }
+
+    .form-section {
+      background: white;
+    }
+
+    form {
+      max-width: 650px;
+      margin: auto;
+      display: grid;
+      gap: 15px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 15px;
+    }
+
+    textarea {
+      resize: none;
+      height: 100px;
+    }
+
+    button {
+      background: #1e3a8a;
+      color: white;
+      border: none;
+      padding: 15px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    footer {
+      background: #1e3a8a;
+      color: white;
+      text-align: center;
+      padding: 25px;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav a {
+        margin: 0 8px;
+      }
+
+      .hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+      }
+
+      .hero-content h1 {
+        font-size: 36px;
+      }
+
+      .hero-box {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h2>RS Tuition Center</h2>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#classes">Classes</a>
+      <a href="#subjects">Subjects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Learn Better with RS Tuition Center</h1>
+      <p>
+        We provide Online Classes, Offline Classes, and Home Tuition for students.
+        Our expert teachers focus on concept clarity, regular practice, doubt solving,
+        and better exam results.
+      </p>
+      <a href="#contact" class="btn">Book Free Demo Class</a>
+    </div>
+
+    <div class="hero-box">
+      <h3>Admissions Open</h3>
+      <p>Online Tuition</p>
+      <p>Offline Tuition</p>
+      <p>Home Tuition</p>
+      <p>Class 1 to Class 12</p>
+    </div>
+  </section>
+
+  <section class="section" id="classes">
+    <h2>Our Tuition Modes</h2>
+    <p>Choose the best learning option for your child.</p>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Online Classes</h3>
+        <p>Live interactive classes, recorded lessons, digital notes, and online doubt sessions.</p>
+      </div>
+
+      <div class="card">
+        <h3>Offline Classes</h3>
+        <p>Classroom learning with expert teachers, regular tests, and face-to-face guidance.</p>
+      </div>
+
+      <div class="card">
+        <h3>Home Tuition</h3>
+        <p>Personal tutor at your home with one-to-one attention and customized learning.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section subjects" id="subjects">
+    <h2>Subjects We Teach</h2>
+    <p>Complete academic support for school students.</p>
+
+    <div class="subject-list">
+      <div>Mathematics</div>
+      <div>Science</div>
+      <div>English</div>
+      <div>Hindi</div>
+      <div>Social Studies</div>
+      <div>Computer</div>
+      <div>Commerce</div>
+      <div>All Subjects</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Why Choose RS Tuition Center?</h2>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Expert Teachers</h3>
+        <p>Qualified and experienced teachers for better learning.</p>
+      </div>
+
+      <div class="card">
+        <h3>Regular Tests</h3>
+        <p>Weekly tests and performance tracking for students.</p>
+      </div>
+
+      <div class="card">
+        <h3>Doubt Support</h3>
+        <p>Special doubt-clearing sessions for every student.</p>
+      </div>
+
+      <div class="card">
+        <h3>Flexible Timings</h3>
+        <p>Morning and evening batches available.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section form-section" id="contact">
+    <h2>Enquiry Form</h2>
+    <p>Fill the form and our team will contact you.</p>
+
+    <form>
+      <input type="text" placeholder="Student Name" required>
+      <input type="text" placeholder="Parent Name" required>
+      <input type="tel" placeholder="Mobile Number" required>
+      <input type="text" placeholder="Class / Grade" required>
+
+      <select required>
+        <option value="">Select Subject</option>
+        <option>Mathematics</option>
+        <option>Science</option>
+        <option>English</option>
+        <option>All Subjects</option>
+      </select>
+
+      <select required>
+        <option value="">Select Tuition Type</option>
+        <option>Online Classes</option>
+        <option>Offline Classes</option>
+        <option>Home Tuition</option>
+      </select>
+
+      <textarea placeholder="Message"></textarea>
+
+      <button type="submit">Submit Enquiry</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2026 RS Tuition Center. All Rights Reserved.</p>
+    <p>Contact: +91 7895376426 | Email: sainisapna2017@gmail.com</p>
+  </footer>
+
+</body>
+</html>
